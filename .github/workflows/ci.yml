@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
 env:
   NODE_ENV: 22.0.0
 
