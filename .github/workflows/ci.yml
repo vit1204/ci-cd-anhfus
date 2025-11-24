@@ -15,4 +15,4 @@ jobs:
     name: Run Unit Test
     steps:
       - id: foo
-        uses: vit1204/ci-cd-anhfus/.github/quality@v3`
+        uses: vit1204/ci-cd-anhfus/.github/quality@v3
