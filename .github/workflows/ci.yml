@@ -14,29 +14,5 @@ jobs:
     runs-on: ubuntu-latest
     name: Run Unit Test
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v6
-        with:
-          node-version: ${{ env.NODE_ENV }}
-      - name: Install dependencies
-        run: npm install
-      - name: test
-        run: npm run test
-
-  notify-job:
-    runs-on: ubuntu-latest
-    name: Notifier
-    steps:
-      - name: Echo
-        run: 'echo "Node env is: ${{ env.NODE_ENV }} $NODE_ENV"'
-
-  cd:
-    runs-on: ubuntu-latest
-    name: Build and publish docker
-    steps:
-      - uses: actions/checkout@v5
-      - name: Build docker
-        run: docker build . -t chuotcona123/training:${{ github.sha }}
-
-      - name: Echo docker
-        run: docker image list
+      - id: foo
+        uses: vit1204/ci-cd-anhfus/.github/quality@v3
