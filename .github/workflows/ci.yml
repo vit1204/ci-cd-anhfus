@@ -1,3 +1,5 @@
+# .github/workflows/ci.yml
+
 name: CI workflow
 
 on:
@@ -11,8 +13,6 @@ env:
 
 jobs:
   unit-test:
-    runs-on: ubuntu-latest
-    name: Run Unit Test
-    steps:
-      - name: Run tests
-        uses: ./.github/workflows/test_workflow.yml@dev
+    # 🌟 THAY THẾ TOÀN BỘ CẤU HÌNH JOB NÀY BẰNG LỜI GỌI WORKFLOW
+    uses: ./.github/workflows/test_workflow.yml@dev # Cú pháp đúng, đặt trực tiếp dưới job_id
+    # Lưu ý: job này sẽ sử dụng runs-on và các cấu hình khác từ test_workflow.yml
