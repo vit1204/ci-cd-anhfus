@@ -14,5 +14,5 @@ jobs:
     runs-on: ubuntu-latest
     name: Run Unit Test
     steps:
-      - id: foo
+      - name: Run tests
         uses: ./.github/workflows/test_workflow.yml
