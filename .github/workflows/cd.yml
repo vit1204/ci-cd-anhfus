@@ -11,10 +11,12 @@ jobs:
     name: Run linting
     steps:
       - uses: actions/checkout@v5
-      # - name: Login docker
-      #   run: docker login -u ${{vars.DOCKER_USERNAME}} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Login docker
+        run: docker login -u ${{vars.DOCKER_USERNAME}} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build docker
-        run: docker build . -t chuotcona123/training:${{ github.sha }}
+        run: docker build . -t thanhviet1204/vietpro:${{ github.sha }}
+      - name: Push docker
+        run: docker push thanhviet1204/vietpro:${{ github.sha }}
 
       - name: Echo docker
         run: docker image list
