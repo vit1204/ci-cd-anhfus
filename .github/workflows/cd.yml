@@ -17,6 +17,5 @@ jobs:
         run: docker build . -t thanhviet1204/vietpro:${{ github.sha }}
       - name: Push docker
         run: docker push thanhviet1204/vietpro:${{ github.sha }}
-
       - name: Echo docker
         run: docker image list

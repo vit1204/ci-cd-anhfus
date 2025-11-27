@@ -1,0 +1,26 @@
+name: "Unit test workflow"
+
+on:
+  workflow_call:
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    name: Run Unit Test
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.0.0
+
+      - name: Install
+        run: npm install
+        shell: bash
+
+      - name: Unit Test
+        run: npm run test
+        shell: bash
+      - name: Lint
+        run: npm run lint
+        shell: bash
